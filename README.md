@@ -31,6 +31,7 @@ Want it checked for you? [Scan your URL free at bleek.dev](https://www.bleek.dev
 - [ ] **Policies are default-deny.** Turn RLS on, then write policies that open only what should be public. See the [Supabase RLS guide](https://supabase.com/docs/guides/database/postgres/row-level-security) or [Firebase Security Rules](https://firebase.google.com/docs/rules).
 - [ ] **You tested as a logged-out user.** Try to read a table you shouldn't be able to. If rows come back, the rule is wrong.
 - [ ] **Storage buckets are locked down.** Public buckets expose every file in them; make them private unless a file is meant for the world.
+- [ ] **New tables have the grants your app needs.** As Supabase's Oct 30 Data API change rolls out, a new table in public can likely return error 42501 (permission denied) on a select until grants are added. See [what changed and the grants to add](https://patchandship.com/guides/supabase-42501-after-oct-30/?utm_source=vibe-coding-security-checklist&utm_medium=referral&utm_campaign=seo-links).
 - [ ] Deep dive: [Supabase security](https://www.bleek.dev/supabase-security) and [Firebase security](https://www.bleek.dev/firebase-security).
 
 ## Secrets and API keys
